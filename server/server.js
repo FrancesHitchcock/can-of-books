@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(bp.json());
 
-const Book = require("/models/book");
+const Book = require("./models/book");
 mongoose.connect(process.env.DATABASE_URL);
 
 app.get("/", (request, response) => {
