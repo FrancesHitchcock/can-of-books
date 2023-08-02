@@ -38,4 +38,13 @@ app.delete("/books/:id", async (request, response) => {
   }
 });
 
+app.post("/books", async (request, response) => {
+  try {
+    const newBook = await Book.create(request.body);
+    response.status(200).json(newBook);
+  } catch (error) {
+    response.status(500).json(error);
+  }
+});
+
 app.listen(PORT, () => console.log(`app is listening on port ${PORT}`));
