@@ -11,6 +11,12 @@ export default function Main() {
     getBooks();
   }, []);
 
+  async function handleDelete(id) {
+    const res = await axios.delete(`http://localhost:8080/books/${id}`);
+    console.log(res);
+    getBooks();
+  }
+
   async function getBooks() {
     const res = await axios.get("http://localhost:8080/books");
     setAllBooks(res.data);
@@ -18,7 +24,7 @@ export default function Main() {
 
   return (
     <main>
-      <BooksContainer allBooks={allBooks} />
+      <BooksContainer allBooks={allBooks} handleDelete={handleDelete} />
     </main>
   );
 }
