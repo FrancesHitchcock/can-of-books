@@ -18,7 +18,7 @@ export default function Main() {
 
   return (
     <main>
-      <BooksContainer />
+      <BooksContainer allBooks={allBooks} />
     </main>
   );
 }
