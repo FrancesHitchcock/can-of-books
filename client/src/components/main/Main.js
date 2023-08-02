@@ -1,6 +1,7 @@
 import "./Main.css";
 import axios from "axios";
 import BooksContainer from "../booksContainer/BooksContainer";
+import AddForm from "../addForm/AddForm";
 
 import { useState, useEffect } from "react";
 
@@ -24,6 +25,7 @@ export default function Main() {
 
   return (
     <main>
+      <AddForm />
       <BooksContainer allBooks={allBooks} handleDelete={handleDelete} />
     </main>
   );
