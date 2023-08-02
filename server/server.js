@@ -20,8 +20,22 @@ app.get("/", (request, response) => {
 });
 
 app.get("/books", async (request, response) => {
-  const allBooks = await Book.find(request.query);
-  response.status(200).json(allBooks);
+  try {
+    const allBooks = await Book.find(request.query);
+    response.status(200).json(allBooks);
+  } catch (error) {
+    response.status(404).json(error);
+  }
+});
+
+app.delete("/books/:id", async (request, response) => {
+  try {
+    const id = request.params.id;
+    const deletedBook = await Book.findByIdAndDelete(id);
+    response.status(200).send(deletedBook);
+  } catch (error) {
+    response.status(500).json(error);
+  }
 });
 
 app.listen(PORT, () => console.log(`app is listening on port ${PORT}`));
