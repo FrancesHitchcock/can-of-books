@@ -1,19 +1,8 @@
-import { useState } from "react";
 import "./AddForm.css";
 
-export default function AddForm() {
-  const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-  });
-  function handleChange(e) {
-    // console.log(e.target.value);
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    // console.log(formData);
-  }
-
+export default function AddForm({ handleAddBook, formData, handleChange }) {
   return (
-    <form>
+    <form id="addBookForm" onSubmit={(e) => handleAddBook(e, formData)}>
       <h1>Form</h1>
       <input
         type="text"
@@ -29,6 +18,7 @@ export default function AddForm() {
         value={formData.description}
         onChange={handleChange}
       />
+      <button>Add book</button>
     </form>
   );
 }
