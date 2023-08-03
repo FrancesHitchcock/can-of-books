@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import "./BooksContainer.css";
 
+import UpdateForm from "../updateForm/UpdateForm";
+
 export default function BooksContainer({ allBooks, handleDelete }) {
+  const [updateVisible, setUpdateVisible] = useState(false);
+
+  function showUpdateForm() {
+    setUpdateVisible(updateVisible ? false : true);
+  }
+
   const booksMarkup = allBooks.map((book) => {
     return (
       <div key={book._id}>
@@ -11,6 +19,8 @@ export default function BooksContainer({ allBooks, handleDelete }) {
         <h2>{book.title}</h2>
         <p>{book.description}</p>
         <input type="checkbox" id="read" /> <label htmlFor="read">Read</label>
+        <button onClick={showUpdateForm}>Edit book</button>
+        {updateVisible && <UpdateForm />}
       </div>
     );
   });

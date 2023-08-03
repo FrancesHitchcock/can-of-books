@@ -17,7 +17,7 @@ export default function Main() {
     getBooks();
   }, []);
 
-  function handleChange(e) {
+  function handleAddFormChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
@@ -47,7 +47,7 @@ export default function Main() {
       <AddForm
         handleAddBook={handleAddBook}
         formData={formData}
-        handleChange={handleChange}
+        handleAddFormChange={handleAddFormChange}
       />
       <BooksContainer allBooks={allBooks} handleDelete={handleDelete} />
     </main>
