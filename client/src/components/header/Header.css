@@ -1,3 +1,6 @@
+@media only screen and (min-width: 1024px) {
+}
+
 @font-face {
   font-family: Cinzel;
   src: url(./Cinzel-VariableFont_wght.ttf);
@@ -6,9 +9,13 @@
   box-sizing: border-box;
   margin: auto;
 }
-header {
+header,
+footer {
+  background-image: url(https://media.istockphoto.com/photos/antique-book-pages-picture-id140411132?k=6&m=140411132&s=612x612&w=0&h=Pd313V8p3RyGa_zUx8Phi9K6wGk2e7lKfJgyiM4ys30=);
+  background-repeat: no-repeat;
   font-family: Cinzel;
   font-weight: 400;
+  background-size: cover;
 }
 
 .Sign {
@@ -34,4 +41,23 @@ button {
   border: 2px solid goldenrod;
   background-color: darkblue;
   color: goldenrod;
+}
+
+.book-box {
+  border: 1px solid goldenrod;
+  border-radius: 12px;
+  margin: 10px auto;
+  width: 50%;
+  background-color: rgba(231, 219, 190, 0.55);
+  font-weight: 700;
+}
+
+label {
+  margin-right: 5px;
+}
+
+main {
+  background-image: url("https://wallpaperaccess.com/full/3133177.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
