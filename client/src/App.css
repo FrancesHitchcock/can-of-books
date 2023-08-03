@@ -1,9 +1,9 @@
 .App {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 header,
 footer {
-  background-color: antiquewhite;
   color: #222;
 }
