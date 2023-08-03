@@ -8,9 +8,28 @@ import { useState, useEffect } from "react";
 export default function Main() {
   const [allBooks, setAllBooks] = useState([]);
 
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+  });
+
   useEffect(() => {
     getBooks();
   }, []);
+
+  function handleChange(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
+  async function handleAddBook(e, formData) {
+    e.preventDefault();
+    const res = await axios.post("http://localhost:8080/books", formData);
+    setAllBooks([...allBooks, res.data]);
+    setFormData({
+      title: "",
+      description: "",
+    });
+  }
 
   async function handleDelete(id) {
     const res = await axios.delete(`http://localhost:8080/books/${id}`);
@@ -25,7 +44,11 @@ export default function Main() {
 
   return (
     <main>
-      <AddForm />
+      <AddForm
+        handleAddBook={handleAddBook}
+        formData={formData}
+        handleChange={handleChange}
+      />
       <BooksContainer allBooks={allBooks} handleDelete={handleDelete} />
     </main>
   );
