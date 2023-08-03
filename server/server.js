@@ -47,4 +47,14 @@ app.post("/books", async (request, response) => {
   }
 });
 
+app.put("/books/:id", async (request, response) => {
+  try {
+    const id = request.params.id;
+    const updatedBook = await Book.findByIdAndUpdate(id, request.body);
+    response.status(204).json(updatedBook);
+  } catch (error) {
+    response.status(500).json(error);
+  }
+});
+
 app.listen(PORT, () => console.log(`app is listening on port ${PORT}`));
