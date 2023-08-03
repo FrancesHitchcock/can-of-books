@@ -1,2 +1,37 @@
+@font-face {
+  font-family: Cinzel;
+  src: url(./Cinzel-VariableFont_wght.ttf);
+}
+* {
+  box-sizing: border-box;
+  margin: auto;
+}
 header {
+  font-family: Cinzel;
+  font-weight: 400;
+}
+
+.Sign {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 5px solid goldenrod;
+  border-radius: 12px;
+  background-color: darkblue;
+  color: goldenrod;
+  width: 300px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border-radius: 12px;
+  border: 2px solid goldenrod;
+  background-color: darkblue;
+  color: goldenrod;
 }
