@@ -1,0 +1,9 @@
+@font-face {
+  font-family: Cinzel;
+  src: url(../header/Cinzel-VariableFont_wght.ttf);
+}
+
+* {
+  font-family: Cinzel;
+  font-weight: 200;
+}
