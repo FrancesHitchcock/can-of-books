@@ -7,7 +7,7 @@
 }
 * {
   box-sizing: border-box;
-  margin: auto;
+  margin: 0 auto;
 }
 header,
 footer {
@@ -16,6 +16,8 @@ footer {
   font-family: Cinzel;
   font-weight: 400;
   background-size: cover;
+  padding: 5px;
+  width: 100%;
 }
 
 .Sign {
@@ -34,6 +36,7 @@ footer {
 
 a {
   text-decoration: none;
+  padding-top: 5px;
 }
 
 button {
@@ -46,10 +49,20 @@ button {
 .book-box {
   border: 1px solid goldenrod;
   border-radius: 12px;
-  margin: 10px auto;
+  margin: 10px auto 0 auto;
   width: 50%;
   background-color: rgba(231, 219, 190, 0.55);
   font-weight: 700;
+  inline-size: 300px;
+  overflow-wrap: break-word;
+}
+
+.book-box button {
+  padding-bottom: 2px;
+}
+
+.book-box form {
+  border-top: 2px dotted gray;
 }
 
 label {
@@ -60,4 +73,7 @@ main {
   background-image: url("https://wallpaperaccess.com/full/3133177.jpg");
   background-size: cover;
   background-attachment: fixed;
+  padding-bottom: 10px;
+  width: 100%;
+  flex-grow: 1;
 }
