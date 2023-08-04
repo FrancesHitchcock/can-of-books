@@ -21,6 +21,12 @@ export default function Main() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
+  async function handleUpdateBook(e, id, book) {
+    e.preventDefault();
+    await axios.put(`http://localhost:8080/books/${id}`, book);
+    getBooks();
+  }
+
   async function handleAddBook(e, formData) {
     e.preventDefault();
     const res = await axios.post("http://localhost:8080/books", formData);
@@ -49,7 +55,11 @@ export default function Main() {
         formData={formData}
         handleAddFormChange={handleAddFormChange}
       />
-      <BooksContainer allBooks={allBooks} handleDelete={handleDelete} />
+      <BooksContainer
+        allBooks={allBooks}
+        handleDelete={handleDelete}
+        handleUpdateBook={handleUpdateBook}
+      />
     </main>
   );
 }

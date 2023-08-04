@@ -7,7 +7,7 @@ export default function AddForm({
 }) {
   return (
     <form onSubmit={(e) => handleAddBook(e, formData)}>
-      <h1>Form</h1>
+      <h3>Add Book</h3>
       <input
         type="text"
         placeholder="Title"
@@ -15,8 +15,7 @@ export default function AddForm({
         value={formData.title}
         onChange={handleAddFormChange}
       />
-      <input
-        type="text"
+      <textarea
         placeholder="Description"
         name="description"
         value={formData.description}
