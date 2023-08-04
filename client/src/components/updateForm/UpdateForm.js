@@ -13,7 +13,7 @@ export default function UpdateForm({ handleUpdateBook, id }) {
 
   return (
     <form onSubmit={(e) => handleUpdateBook(e, id, formData)}>
-      <h1>Form</h1>
+      <h3>Update Book</h3>
       <input
         type="text"
         placeholder="Title"
@@ -21,8 +21,7 @@ export default function UpdateForm({ handleUpdateBook, id }) {
         value={formData.title}
         onChange={handleUpdateFormChange}
       />
-      <input
-        type="text"
+      <textarea
         placeholder="Description"
         name="description"
         value={formData.description}

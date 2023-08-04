@@ -2,15 +2,9 @@ import React, { useState } from "react";
 
 import "./Book.css";
 import UpdateForm from "../updateForm/UpdateForm";
-import axios from "axios";
 
-export default function Book({ book, handleDelete }) {
+export default function Book({ book, handleDelete, handleUpdateBook }) {
   const [updateVisible, setUpdateVisible] = useState(false);
-
-  async function handleUpdateBook(e, id, book) {
-    e.preventDefault();
-    await axios.put(`http://localhost:8080/books/${id}`, book);
-  }
 
   function showUpdateForm() {
     setUpdateVisible(updateVisible ? false : true);
