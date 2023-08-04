@@ -23,13 +23,16 @@ export default function Main() {
 
   async function handleUpdateBook(e, id, book) {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/books/${id}`, book);
+    await axios.put(`https://can-of-books-ehwb.onrender.com/books/${id}`, book);
     getBooks();
   }
 
   async function handleAddBook(e, formData) {
     e.preventDefault();
-    const res = await axios.post("http://localhost:8080/books", formData);
+    const res = await axios.post(
+      "https://can-of-books-ehwb.onrender.com/books",
+      formData
+    );
     setAllBooks([...allBooks, res.data]);
     setFormData({
       title: "",
@@ -38,13 +41,17 @@ export default function Main() {
   }
 
   async function handleDelete(id) {
-    const res = await axios.delete(`http://localhost:8080/books/${id}`);
+    const res = await axios.delete(
+      `https://can-of-books-ehwb.onrender.com/books/${id}`
+    );
     console.log(res);
     getBooks();
   }
 
   async function getBooks() {
-    const res = await axios.get("http://localhost:8080/books");
+    const res = await axios.get(
+      "https://can-of-books-ehwb.onrender.com:8080/books"
+    );
     setAllBooks(res.data);
   }
 

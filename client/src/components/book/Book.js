@@ -20,7 +20,11 @@ export default function Book({ book, handleDelete, handleUpdateBook }) {
       <input type="checkbox" id="read" /> <label htmlFor="read">Read</label>
       <button onClick={showUpdateForm}>Edit book</button>
       {updateVisible && (
-        <UpdateForm handleUpdateBook={handleUpdateBook} id={book._id} />
+        <UpdateForm
+          handleUpdateBook={handleUpdateBook}
+          id={book._id}
+          book={book}
+        />
       )}
     </div>
   );
