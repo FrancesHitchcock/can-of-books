@@ -1,10 +1,10 @@
 import "./UpdateForm.css";
 import { useState } from "react";
 
-export default function UpdateForm({ handleUpdateBook, id }) {
+export default function UpdateForm({ handleUpdateBook, id, book }) {
   const [formData, setFormData] = useState({
-    title: "",
-    description: "",
+    title: book.title,
+    description: book.description,
   });
 
   function handleUpdateFormChange(e) {
