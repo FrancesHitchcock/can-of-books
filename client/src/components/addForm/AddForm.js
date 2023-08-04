@@ -7,7 +7,6 @@ export default function AddForm({
 }) {
   return (
     <form onSubmit={(e) => handleAddBook(e, formData)}>
-      <h3>Add Book</h3>
       <input
         type="text"
         placeholder="Title"
