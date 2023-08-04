@@ -49,9 +49,7 @@ export default function Main() {
   }
 
   async function getBooks() {
-    const res = await axios.get(
-      "https://can-of-books-ehwb.onrender.com:8080/books"
-    );
+    const res = await axios.get("https://can-of-books-ehwb.onrender.com/books");
     setAllBooks(res.data);
   }
 
